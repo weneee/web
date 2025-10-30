@@ -1,0 +1,131 @@
+===========================================
+INSTRUCCIONES DE INSTALACIÓN - WINBEAUT
+===========================================
+
+REQUISITOS:
+-----------
+- XAMPP (incluye Apache, PHP 7.4+, MySQL)
+- Navegador web moderno (Chrome, Firefox, Edge)
+
+PASOS DE INSTALACIÓN:
+---------------------
+
+1. INSTALAR XAMPP
+   - Descarga XAMPP desde: https://www.apachefriends.org/
+   - Instala XAMPP en tu computadora
+   - Inicia el Panel de Control de XAMPP
+
+2. COPIAR ARCHIVOS
+   - Copia toda la carpeta "winbeaut" a: C:\xampp\htdocs\
+   - La ruta completa debe ser: C:\xampp\htdocs\winbeaut\
+
+3. INICIAR SERVICIOS
+   - En el Panel de Control de XAMPP, inicia:
+     * Apache (botón "Start")
+     * MySQL (botón "Start")
+
+4. CREAR BASE DE DATOS
+   - Abre tu navegador y ve a: http://localhost/phpmyadmin
+   - Haz clic en "Nueva" en el panel izquierdo
+   - Nombre de la base de datos: winbeaut_db
+   - Cotejamiento: utf8mb4_unicode_ci
+   - Haz clic en "Crear"
+
+5. IMPORTAR ESTRUCTURA DE BASE DE DATOS
+   - Selecciona la base de datos "winbeaut_db" en el panel izquierdo
+   - Haz clic en la pestaña "Importar"
+   - Haz clic en "Seleccionar archivo"
+   - Navega a: C:\xampp\htdocs\winbeaut\database\schema.sql
+   - Haz clic en "Continuar" al final de la página
+   - Espera a que se complete la importación
+
+6. IMPORTAR PRODUCTOS DEL CATÁLOGO
+   - En la misma base de datos "winbeaut_db"
+   - Haz clic nuevamente en "Importar"
+   - Selecciona el archivo: C:\xampp\htdocs\winbeaut\database\productos_catalogo.sql
+   - Haz clic en "Continuar"
+   - Espera a que se complete la importación
+
+7. VERIFICAR PERMISOS DE CARPETAS
+   - Asegúrate de que la carpeta "uploads" tenga permisos de escritura
+   - En Windows, esto generalmente no es problema
+   - En Linux/Mac, ejecuta: chmod -R 777 uploads/
+
+8. ACCEDER A LA APLICACIÓN
+   - Abre tu navegador
+   - Ve a: http://localhost/winbeaut
+   - Deberías ver la página principal con los productos
+
+CREDENCIALES DE ADMINISTRADOR:
+------------------------------
+Email: admin@winbeaut.com
+Contraseña: admin123
+
+CREDENCIALES DE PRUEBA (CLIENTE):
+----------------------------------
+Puedes registrar tu propia cuenta de cliente desde la página de registro.
+
+ESTRUCTURA DE ARCHIVOS:
+------------------------
+winbeaut/
+├── api/                    # APIs para productos, pedidos, autenticación
+├── admin/                  # Panel de administración
+├── assets/                 # CSS, JS, imágenes
+├── config/                 # Configuración de base de datos y sesiones
+├── database/               # Scripts SQL
+├── includes/               # Header, footer, componentes reutilizables
+├── uploads/                # Imágenes de productos subidas
+├── index.php               # Página principal
+├── login.php               # Página de inicio de sesión
+├── registro.php            # Página de registro
+├── producto-detalle.php    # Detalle de producto
+├── carrito.php             # Carrito de compras
+└── mis-pedidos.php         # Historial de pedidos del usuario
+
+FUNCIONALIDADES:
+----------------
+✓ Catálogo de productos con filtros por categoría
+✓ Sistema de autenticación (login/registro)
+✓ Dos tipos de usuarios: Cliente y Administrador
+✓ Carrito de compras
+✓ Sistema de pedidos
+✓ Panel de administración para gestionar productos
+✓ Protección de rutas (solo usuarios autenticados pueden comprar)
+✓ Redirección automática a login si no está autenticado
+✓ Gestión de stock de productos
+✓ Historial de pedidos
+
+SOLUCIÓN DE PROBLEMAS:
+----------------------
+
+Problema: "No se puede conectar a la base de datos"
+Solución: 
+- Verifica que MySQL esté iniciado en XAMPP
+- Verifica las credenciales en config/database.php
+- Usuario por defecto: root
+- Contraseña por defecto: (vacía)
+
+Problema: "Las imágenes no se muestran"
+Solución:
+- Verifica que la carpeta uploads/productos/ exista
+- Verifica los permisos de la carpeta uploads/
+
+Problema: "Error 404 - Página no encontrada"
+Solución:
+- Verifica que Apache esté iniciado en XAMPP
+- Verifica que la carpeta esté en C:\xampp\htdocs\winbeaut\
+- Accede a http://localhost/winbeaut (no olvides /winbeaut)
+
+Problema: "No puedo agregar productos como administrador"
+Solución:
+- Verifica que hayas iniciado sesión con admin@winbeaut.com
+- Verifica que la carpeta uploads/productos/ tenga permisos de escritura
+
+CONTACTO Y SOPORTE:
+-------------------
+Instagram: @Winbeaut
+Teléfono: 753 163 23 00 | 753 104 20 80
+
+===========================================
+¡Disfruta tu tienda Winbeaut!
+===========================================
